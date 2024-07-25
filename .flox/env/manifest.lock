@@ -23,7 +23,9 @@
         "pkg-path": "process-compose"
       }
     },
-    "vars": {},
+    "vars": {
+      "DB_CONNECTION_STRING": "pg://bla"
+    },
     "hook": {
       "on-activate": ""
     },

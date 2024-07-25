@@ -24,6 +24,7 @@ caddy.pkg-path = "caddy"
 # scripts.
 [vars]
 # message = "Howdy"
+DB_CONNECTION_STRING = "pg://bla"
 
 [services.artisan-serve]
 command = "( pushd example-app ; php artisan serve 2>&1 )"
