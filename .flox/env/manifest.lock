@@ -1,0 +1,642 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "caddy": {
+        "pkg-path": "caddy"
+      },
+      "composer": {
+        "pkg-path": "php82Packages.composer",
+        "pkg-group": "php"
+      },
+      "nodejs": {
+        "pkg-path": "nodejs",
+        "pkg-group": "php"
+      },
+      "php": {
+        "pkg-path": "php",
+        "pkg-group": "php",
+        "version": "with-extensions-8.2.21"
+      },
+      "process-compose": {
+        "pkg-path": "process-compose"
+      }
+    },
+    "vars": {},
+    "hook": {
+      "on-activate": ""
+    },
+    "profile": {
+      "common": "  alias process-compose=\"process-compose -u \"$_FLOX_SERVICES_SOCKET\"\"\n\n  function services_stop_all() {\n    process-compose down\n  }\n  export -f services_stop > /dev/null\n\n  function services_list() {\n    process-compose process list\n  }\n  export -f services_list > /dev/null\n\n  function services_logs() {\n    process-compose process logs \"$1\"\n  }\n  export -f services_logs > /dev/null\n"
+    },
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "x86_64-linux"
+      ],
+      "allow": {
+        "licenses": []
+      },
+      "semver": {}
+    },
+    "services": {
+      "artisan-serve": {
+        "command": "( pushd example-app ; php artisan serve 2>&1 )",
+        "vars": null
+      },
+      "caddy": {
+        "command": "( caddy run --config ./Caddyfile )",
+        "vars": null
+      }
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "php82Packages.composer",
+      "broken": false,
+      "derivation": "/nix/store/2qp9qclvl1qajvnk341ymv1qwlgac4d2-composer-2.7.7.drv",
+      "description": "Dependency Manager for PHP",
+      "install_id": "composer",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "composer-2.7.7",
+      "pname": "composer",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.7",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/r8f6fn48lpixaxzan3l0wfarnrqd2mq0-composer-2.7.7"
+      },
+      "system": "aarch64-darwin",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "php82Packages.composer",
+      "broken": false,
+      "derivation": "/nix/store/gz6bczy05n591cqh08136cam1gckng0i-composer-2.7.7.drv",
+      "description": "Dependency Manager for PHP",
+      "install_id": "composer",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "composer-2.7.7",
+      "pname": "composer",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.7",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/pdxyaa5maqz50n2nak83w4gasm466lgb-composer-2.7.7"
+      },
+      "system": "aarch64-linux",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "php82Packages.composer",
+      "broken": false,
+      "derivation": "/nix/store/n11g2xwkrnlf5gxs6nrzw4p0wjjd3kd0-composer-2.7.7.drv",
+      "description": "Dependency Manager for PHP",
+      "install_id": "composer",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "composer-2.7.7",
+      "pname": "composer",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.7",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/i1wvbhfcvbb1maiwhrl4qqrmr3sx9qxy-composer-2.7.7"
+      },
+      "system": "x86_64-darwin",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "php82Packages.composer",
+      "broken": false,
+      "derivation": "/nix/store/6ka3qw00rgdln0xzhprxn0xxlbgd4vwk-composer-2.7.7.drv",
+      "description": "Dependency Manager for PHP",
+      "install_id": "composer",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "composer-2.7.7",
+      "pname": "composer",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.7",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2g9kzgdadc918w99vmjd12b8svjwihhh-composer-2.7.7"
+      },
+      "system": "x86_64-linux",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/zggprjijn23z1a3f336inwigpraxzm79-nodejs-20.14.0.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "nodejs-20.14.0",
+      "pname": "nodejs",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "20.14.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/1i0rb2axkrxvsq5pz8s2q07ard2p36a1-nodejs-20.14.0-libv8",
+        "out": "/nix/store/sqnbldm1fjw88v23yq4v6531y4m7v2fh-nodejs-20.14.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/kkq1kgsn0y9lia0488khn4sw4v6vi732-nodejs-20.14.0.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "nodejs-20.14.0",
+      "pname": "nodejs",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "20.14.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/5ii3xkbd3iv0xvqqvjg3agsm0dinidgm-nodejs-20.14.0-libv8",
+        "out": "/nix/store/r1nwmlbsn67f5rhayr7jjjdmiflxpk92-nodejs-20.14.0"
+      },
+      "system": "aarch64-linux",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/s6s1bf1b7gy2h49gqq12061dyb869l50-nodejs-20.14.0.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "nodejs-20.14.0",
+      "pname": "nodejs",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "20.14.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/gc2gnkc8hvkh51ab3a29fvgzy2qsqb2s-nodejs-20.14.0-libv8",
+        "out": "/nix/store/wzgnws4r1c98vzj5q6gq4drz2jfq7d5q-nodejs-20.14.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/7hyc9v44b6gidfxgj1lip9h1338w6skb-nodejs-20.14.0.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "nodejs-20.14.0",
+      "pname": "nodejs",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "20.14.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/2qaf68dzimr8as4bgli0xmsn11c0ah2j-nodejs-20.14.0-libv8",
+        "out": "/nix/store/ilkfhnqz4xczrliqjva8770x2svbfznd-nodejs-20.14.0"
+      },
+      "system": "x86_64-linux",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "php",
+      "broken": false,
+      "derivation": "/nix/store/492p7zszr8aklfg9a8br70r6sl0r3ygs-php-with-extensions-8.2.21.drv",
+      "description": "HTML-embedded scripting language",
+      "install_id": "php",
+      "license": "PHP-3.01",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "php-with-extensions-8.2.21",
+      "pname": "php",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "with-extensions-8.2.21",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/hjkvy96mr1y5ldn4a6lmy7lfyv1kd1iw-php-with-extensions-8.2.21"
+      },
+      "system": "aarch64-darwin",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "php",
+      "broken": false,
+      "derivation": "/nix/store/01vdrajan1vz0mmmlgcl6m9qknd2s4i5-php-with-extensions-8.2.21.drv",
+      "description": "HTML-embedded scripting language",
+      "install_id": "php",
+      "license": "PHP-3.01",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "php-with-extensions-8.2.21",
+      "pname": "php",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "with-extensions-8.2.21",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ly6yh049780680kw4lvyb82b7h1hy1c2-php-with-extensions-8.2.21"
+      },
+      "system": "aarch64-linux",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "php",
+      "broken": false,
+      "derivation": "/nix/store/885k0qg34a0xp28hxv94h9hr3dhwdh0d-php-with-extensions-8.2.21.drv",
+      "description": "HTML-embedded scripting language",
+      "install_id": "php",
+      "license": "PHP-3.01",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "php-with-extensions-8.2.21",
+      "pname": "php",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "with-extensions-8.2.21",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/mz48zvsg0zfm8d003jzy85g3k40y5lp8-php-with-extensions-8.2.21"
+      },
+      "system": "x86_64-darwin",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "php",
+      "broken": false,
+      "derivation": "/nix/store/n8qgwwr96f2mkf1rg9k152b9ah8s0f85-php-with-extensions-8.2.21.drv",
+      "description": "HTML-embedded scripting language",
+      "install_id": "php",
+      "license": "PHP-3.01",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "php-with-extensions-8.2.21",
+      "pname": "php",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "with-extensions-8.2.21",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/m50sjwkb1xfrgp48bcph56sdz70j84vv-php-with-extensions-8.2.21"
+      },
+      "system": "x86_64-linux",
+      "group": "php",
+      "priority": 5
+    },
+    {
+      "attr_path": "caddy",
+      "broken": false,
+      "derivation": "/nix/store/ha99a4cf6zpca9ca939f9xmjx34m4fi1-caddy-2.8.4.drv",
+      "description": "Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+      "install_id": "caddy",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "caddy-2.8.4",
+      "pname": "caddy",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.8.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/jbdqn5mzwzlk9vacsfgnf0ak2z5myahd-caddy-2.8.4"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "caddy",
+      "broken": false,
+      "derivation": "/nix/store/lzalx9pfzwjp3h54pjk2dflkrccsqix4-caddy-2.8.4.drv",
+      "description": "Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+      "install_id": "caddy",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "caddy-2.8.4",
+      "pname": "caddy",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.8.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/9z87hx96ff4h5ifk7nr8swbm1sr4nwra-caddy-2.8.4"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "caddy",
+      "broken": false,
+      "derivation": "/nix/store/8pj7m2jzslbwca8w3dwaz18jjmx0r7bn-caddy-2.8.4.drv",
+      "description": "Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+      "install_id": "caddy",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "caddy-2.8.4",
+      "pname": "caddy",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.8.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/s3c7505msri2001ppjpd0y7xh5g8vjxk-caddy-2.8.4"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "caddy",
+      "broken": false,
+      "derivation": "/nix/store/2kybp9k7nbi5vpcbf3cdy12a1q32dvhh-caddy-2.8.4.drv",
+      "description": "Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+      "install_id": "caddy",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "caddy-2.8.4",
+      "pname": "caddy",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.8.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/drmd4jdjrbq0bwd06nirw0g22sd06b79-caddy-2.8.4"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "process-compose",
+      "broken": false,
+      "derivation": "/nix/store/wmayyqiicjbvlkrbpcjm9dngfmii55xq-process-compose-1.6.1.drv",
+      "description": "Simple and flexible scheduler and orchestrator to manage non-containerized applications",
+      "install_id": "process-compose",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "process-compose-1.6.1",
+      "pname": "process-compose",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/4hmjz30f4kq8jb5kdb8kr73dmy8c99k8-process-compose-1.6.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "process-compose",
+      "broken": false,
+      "derivation": "/nix/store/dgzj7sma7drggg6bdbv75lrq6c2f455g-process-compose-1.6.1.drv",
+      "description": "Simple and flexible scheduler and orchestrator to manage non-containerized applications",
+      "install_id": "process-compose",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "process-compose-1.6.1",
+      "pname": "process-compose",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/w7v9c80hshfpf257dihih8m4nxaridlv-process-compose-1.6.1"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "process-compose",
+      "broken": false,
+      "derivation": "/nix/store/7ynks4zi3nlir31w1n1bp7nfgrij8agq-process-compose-1.6.1.drv",
+      "description": "Simple and flexible scheduler and orchestrator to manage non-containerized applications",
+      "install_id": "process-compose",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "process-compose-1.6.1",
+      "pname": "process-compose",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/dq6jz4qdf10mdp0g99gvzivqgqq6lr1z-process-compose-1.6.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "process-compose",
+      "broken": false,
+      "derivation": "/nix/store/qzli6i71pm28nc7lgzhfvg12k5qpi7rx-process-compose-1.6.1.drv",
+      "description": "Simple and flexible scheduler and orchestrator to manage non-containerized applications",
+      "install_id": "process-compose",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "name": "process-compose-1.6.1",
+      "pname": "process-compose",
+      "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+      "rev_count": 655874,
+      "rev_date": "2024-07-21T11:40:59Z",
+      "scrape_date": "2024-07-23T05:31:27Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.6.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/32frdhjfdpqcjdv7291xraj03dci6vkk-process-compose-1.6.1"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}
